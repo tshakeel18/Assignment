@@ -3,7 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.0.
 
 ## Demo 
-- You can see the on the following link 
+- You can see the demo on the following link 
 http://images-dashboard.surge.sh/
 
 ## Development server
