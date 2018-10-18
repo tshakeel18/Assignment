@@ -1,0 +1,58 @@
+<div class="row">
+  <div 
+    class="col-3" 
+    *ngFor="let image of pagedImages; let i = index" 
+    (click)="openModal(template, image, i)">
+    
+    <div class="images__block">
+      <img [src]="image.src"/>
+    </div>
+  </div>
+</div>
+
+<div class="images__block_pager">
+  <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+      <li class="page-item" 
+          [ngClass]="{disabled:pager.currentPage === 1}">
+          <a class="page-link" 
+            (click)="setPage(1)">First
+          </a>
+      </li>
+      <li class="page-item"  
+          [ngClass]="{disabled:pager.currentPage === 1}">
+          <a class="page-link" 
+            (click)="setPage(pager.currentPage - 1)">Previous
+          </a>
+      </li>
+      <li class="page-item"  
+          *ngFor="let page of pager.pages" 
+          [ngClass]="{active:pager.currentPage === page}">
+          <a class="page-link" 
+            (click)="setPage(page)">{{page}}
+          </a>
+      </li>
+      <li class="page-item" 
+          [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a class="page-link" 
+            (click)="setPage(pager.currentPage + 1)">Next
+          </a>
+      </li>
+      <li class="page-item"  
+          [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+          <a class="page-link" 
+            (click)="setPage(pager.totalPages)">Last
+          </a>
+      </li>
+  </ul>
+</div>
+
+<ng-template #template>
+  <div class="content">
+    <img [src]="zoomedImageSrc"/>
+    <div class="modal__action-container">
+      <div><strong>Created On: </strong> {{createdDate}}</div>
+      <button (click)="deleteImage()">Delete Image
+      </button>
+    </div> 
+  </div>
+</ng-template>

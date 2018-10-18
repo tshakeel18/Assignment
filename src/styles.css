@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  overflow: hidden;
+}
+
+.modal-dialog.modal-lg {
+  max-width: 70%;
+  height: 500px;
+}
+
+.modal-dialog.modal-lg .modal-content {
+  height: 100%;
+}
+
+.modal-dialog.modal-lg .content {
+  height: 100%;
+  padding: 40px;
+  background-color: #80808026;
+}
+
+.modal-dialog.modal-lg .content img {
+  height: 100%;
+  width: 100%;
+}
+
+.modal-dialog.modal-lg .content .modal__action-container {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5px;
+}
+
+.modal-dialog.modal-lg .content .modal__action-container button {
+  height: 30px;
+  font-size: 12px;
+  background: #ff00008c;
+  border: 0;
+}

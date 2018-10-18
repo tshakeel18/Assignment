@@ -1,0 +1,16 @@
+.images__block {
+  margin: 5px;
+  border: 1px solid #18191821;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.images__block img {
+  width: 100%;
+  height: 150px;
+}
+
+.images__block_pager {
+  display: flex;
+  justify-content: center;
+}

@@ -1,0 +1,15 @@
+<header>
+<div *ngIf="!isNotFound">
+  {{title}}
+</div>
+</header>
+<!-- <div>
+  <a [routerLink]="['/']">Home</a>
+  <a [routerLink]="['product']">Product</a>
+  <a [routerLink]="['product', 100]">Product id = 100</a>
+</div> -->
+
+<div class="content-container">
+<router-outlet></router-outlet>
+</div>
+<footer></footer>

@@ -1,0 +1,34 @@
+<div class="row">
+  <div class="col-3 dashboard__container">
+    <label
+      class="uploader" 
+      ondragover="return false;"
+      [class.loaded]="loaded" 
+      [style.outlineColor]="dragging ? activeColor : baseColor"
+      (dragenter)="handleDragEnter()"
+      (dragleave)="handleDragLeave()"
+      (drop)="handleDrop($event)">
+      
+      <p *ngIf="!imageSrc">
+        Click on it to select the item or you can drag and drop the image
+      </p>
+      <img 
+        [src]="imageSrc" 
+        (load)="handleImageLoad()" 
+        [class.loaded]="imageLoaded"/>
+        
+      <input 
+        type="file" 
+        name="file" 
+        accept="image/*"
+        (change)="handleInputChange($event)">
+    </label>
+
+    <div class="dashboard__container_btn">
+      <button (click)="saveImage()">Save</button>
+    </div>
+  </div>
+  <div class="col-9 dashboard__container_images-list">
+    <images-list></images-list>
+  </div>
+</div>
